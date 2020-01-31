@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;	//Allows us to use UI.
 using UnityEngine.SceneManagement;
+using Rewired;
 
 namespace Completed
 {
@@ -11,7 +11,8 @@ namespace Completed
 		public float restartLevelDelay = 1f;		//Delay time in seconds to restart level.
 		public int pointsPerFood = 10;				//Number of points to add to player food points when picking up a food object.
 		public int pointsPerSoda = 20;				//Number of points to add to player food points when picking up a soda object.
-		public int wallDamage = 1;					//How much damage a player does to a wall when chopping it.
+		public int wallDamage = 1;                  //How much damage a player does to a wall when chopping it.
+		public int PlayerId = 0;
 		public Text foodText;						//UI Text to display current player food total.
 		public AudioClip moveSound1;				//1 of 2 Audio clips to play when player moves.
 		public AudioClip moveSound2;				//2 of 2 Audio clips to play when player moves.
@@ -23,6 +24,7 @@ namespace Completed
 		
 		private Animator animator;					//Used to store a reference to the Player's animator component.
 		private int food;                           //Used to store player food points total during level.
+		private Rewired.Player inputPlayer;
 #if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
         private Vector2 touchOrigin = -Vector2.one;	//Used to store location of screen touch origin for mobile controls.
 #endif
@@ -39,7 +41,8 @@ namespace Completed
 		{
 			//Get a component reference to the Player's animator component
 			animator = GetComponent<Animator>();
-			
+			inputPlayer = ReInput.players.GetPlayer(PlayerId);
+
 			//Get the current food point total stored in GameManager.instance between levels.
 			food = GameManager.instance.playerFoodPoints;
 			
@@ -82,13 +85,13 @@ namespace Completed
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
 			
 			//Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
-			horizontal = (int) (Input.GetAxisRaw ("Horizontal"));
+			horizontal = (int) inputPlayer.GetAxis(RewiredConsts.Action.HorizontalMove);
 			
 			//Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
-			vertical = (int) (Input.GetAxisRaw ("Vertical"));
-			
+			vertical = (int) inputPlayer.GetAxis(RewiredConsts.Action.VerticalMove);
+
 			//Check if moving horizontally, if so set vertical to zero.
-			if(horizontal != 0)
+			if (horizontal != 0)
 			{
 				vertical = 0;
 			}
