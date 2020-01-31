@@ -27,6 +27,12 @@ namespace Completed
         private Vector2 touchOrigin = -Vector2.one;	//Used to store location of screen touch origin for mobile controls.
 #endif
 		
+        public enum NB_PLAYER
+        {
+            PLAYER_1,
+            PLAYER_2
+        }
+        public NB_PLAYER currentNbPlayer;
 		
 		//Start overrides the Start function of MovingObject
 		protected override void Start ()
@@ -55,10 +61,21 @@ namespace Completed
 		
 		private void Update ()
 		{
-			//If it's not the player's turn, exit the function.
-			if(!GameManager.instance.playersTurn) return;
-			
-			int horizontal = 0;  	//Used to store the horizontal move direction.
+            //If it's not the player's turn, exit the function.
+            if (currentNbPlayer == NB_PLAYER.PLAYER_1)
+            {
+                if (!GameManager.instance.playersTurn)
+                    return;
+                Debug.Log("entrer dans le mouvement J1");
+            }
+            if (currentNbPlayer == NB_PLAYER.PLAYER_2)
+            {
+                if (!GameManager.instance.playersTurn2)
+                    return;
+                 Debug.Log("entrer dans le mouvement J2");
+            }
+
+            int horizontal = 0;  	//Used to store the horizontal move direction.
 			int vertical = 0;		//Used to store the vertical move direction.
 			
 			//Check if we are running either in the Unity editor or in a standalone build.
@@ -151,12 +168,27 @@ namespace Completed
 			
 			//Since the player has moved and lost food points, check if the game has ended.
 			CheckIfGameOver ();
-			
-			//Set the playersTurn boolean of GameManager to false now that players turn is over.
-			GameManager.instance.playersTurn = false;
-		}
+
+            //Set the playersTurn boolean of GameManager to false now that players turn is over.
+            StartCoroutine(TurnDelay());
+        }
 		
-		
+		public IEnumerator TurnDelay()
+        {
+            if (currentNbPlayer == NB_PLAYER.PLAYER_1)
+            {
+                Debug.Log("fin tour J1");
+                GameManager.instance.playersTurn = false;
+                yield return new WaitForSeconds(0.2f);
+                GameManager.instance.playersTurn2 = true;
+            }
+            if (currentNbPlayer == NB_PLAYER.PLAYER_2)
+            {
+                Debug.Log("fin tour J2");
+                StartCoroutine(GameManager.instance.MoveEnemies());
+            }
+        }
+        
 		//OnCantMove overrides the abstract function OnCantMove in MovingObject.
 		//It takes a generic parameter T which in the case of Player is a Wall which the player can attack and destroy.
 		protected override void OnCantMove <T> (T component)
