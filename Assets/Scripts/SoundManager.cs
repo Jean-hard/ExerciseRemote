@@ -5,6 +5,8 @@ namespace Completed
 {
 	public class SoundManager : MonoBehaviour 
 	{
+        // test commmit
+
 		public AudioSource efxSource;					//Drag a reference to the audio source which will play the sound effects.
 		public AudioSource musicSource;					//Drag a reference to the audio source which will play the music.
 		public static SoundManager instance = null;		//Allows other scripts to call functions from SoundManager.				
