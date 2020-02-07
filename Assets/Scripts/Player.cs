@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;	//Allows us to use UI.
 using UnityEngine.SceneManagement;
+using System.Collections;
 using Rewired;
 
 namespace Completed
