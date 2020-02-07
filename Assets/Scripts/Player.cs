@@ -46,10 +46,13 @@ namespace Completed
 
 			//Get the current food point total stored in GameManager.instance between levels.
 			food = GameManager.instance.playerFoodPoints;
-			
+
 			//Set the foodText to reflect the current player food total.
-			foodText.text = "Food: " + food;
-			
+			if (currentNbPlayer == NB_PLAYER.PLAYER_1)
+				foodText.text = "J1 - Food: " + food;
+			else
+				foodText.text = "J2 - Food: " + food;
+
 			//Call the Start function of the MovingObject base class.
 			base.Start ();
 		}
@@ -153,10 +156,13 @@ namespace Completed
 		{
 			//Every time player moves, subtract from food points total.
 			food--;
-			
+
 			//Update food text display to reflect current score.
-			foodText.text = "Food: " + food;
-			
+			if (currentNbPlayer == NB_PLAYER.PLAYER_1)
+				foodText.text = "J1 - Food: " + food;
+			else
+				foodText.text = "J2 - Food: " + food;
+
 			//Call the AttemptMove method of the base class, passing in the component T (in this case Wall) and x and y direction to move.
 			base.AttemptMove <T> (xDir, yDir);
 			
