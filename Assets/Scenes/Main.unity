@@ -347,9 +347,9 @@ MonoBehaviour:
   usePlayingPlayersOnly: 0
   playerMice: []
   moveOneElementPerAxisPress: 0
-  setActionsById: 0
-  horizontalActionId: -1
-  verticalActionId: -1
+  setActionsById: 1
+  horizontalActionId: 0
+  verticalActionId: 1
   submitActionId: -1
   cancelActionId: -1
   m_HorizontalAxis: UIHorizontal
@@ -650,13 +650,13 @@ MonoBehaviour:
   rewiredInputManager: {fileID: 1875719693}
   useAllRewiredGamePlayers: 0
   useRewiredSystemPlayer: 0
-  rewiredPlayerIds: 01000000
+  rewiredPlayerIds: 00000000
   usePlayingPlayersOnly: 0
   playerMice: []
   moveOneElementPerAxisPress: 0
-  setActionsById: 0
-  horizontalActionId: -1
-  verticalActionId: -1
+  setActionsById: 1
+  horizontalActionId: 0
+  verticalActionId: 1
   submitActionId: -1
   cancelActionId: -1
   m_HorizontalAxis: UIHorizontal
@@ -879,6 +879,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
         type: 3}
+      propertyPath: _userData.actions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryMap.list.Array.data[0].actionIds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategories.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryMap.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._defaultKeyboardMaps.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
       propertyPath: _userData.players.Array.data[1]._id
       value: 1
       objectReference: {fileID: 0}
@@ -966,6 +996,116 @@ PrefabInstance:
         type: 3}
       propertyPath: _userData.players.Array.data[2]._controllerMapEnablerSettings._enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[0]._type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[2]._id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[2]._name
+      value: Action0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[2]._type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[2]._descriptiveName
+      value: Action0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[2]._userAssignable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryMap.list.Array.data[0].actionIds.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryMap.list.Array.data[0].actionIds.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionIdCounter
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategories.Array.data[1]._name
+      value: Category0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategories.Array.data[1]._descriptiveName
+      value: Category0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategories.Array.data[1]._id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategories.Array.data[1]._userAssignable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryMap.list.Array.data[1].categoryId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actionCategoryIdCounter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._defaultKeyboardMaps.Array.data[0]._enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[1]._type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._defaultKeyboardMaps.Array.data[0]._enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[0]._positiveDescriptiveName
+      value: right
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[0]._negativeDescriptiveName
+      value: left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[1]._positiveDescriptiveName
+      value: up
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.actions.Array.data[1]._negativeDescriptiveName
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 3059873285130964368, guid: d5bc940748c15a246a6788909d620ca2,
         type: 3}

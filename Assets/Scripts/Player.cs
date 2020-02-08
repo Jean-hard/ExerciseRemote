@@ -90,12 +90,14 @@ namespace Completed
 			
 			//Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
 			horizontal = (int) inputPlayer.GetAxis(RewiredConsts.Action.HorizontalMove);
-			
-			//Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
-			vertical = (int) inputPlayer.GetAxis(RewiredConsts.Action.VerticalMove);
+            Debug.Log("valeur horizontal rewired : " + horizontal);
 
-			//Check if moving horizontally, if so set vertical to zero.
-			if (horizontal != 0)
+            //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
+            vertical = (int) inputPlayer.GetAxis(RewiredConsts.Action.VerticalMove);
+            Debug.Log("valeur vertical rewired : " + vertical);
+
+            //Check if moving horizontally, if so set vertical to zero.
+            if (horizontal != 0)
 			{
 				vertical = 0;
 			}
