@@ -23,10 +23,11 @@ namespace Completed
 		private int level = 1;									//Current level number, expressed in game as "Day 1".
 		private List<Enemy> enemies;							//List of all Enemy units, used to issue them move commands.
 		private bool enemiesMoving;								//Boolean to check if enemies are moving.
-		private bool doingSetup = true;							//Boolean to check if we're setting up board, prevent Player from moving during setup.
-		
-		
-		
+		private bool doingSetup = true;                         //Boolean to check if we're setting up board, prevent Player from moving during setup.
+
+		private GameObject player;
+		private GameObject player1;
+
 		//Awake is always called before any Start functions
 		void Awake()
 		{
@@ -50,7 +51,11 @@ namespace Completed
 			
 			//Get a component reference to the attached BoardManager script
 			boardScript = GetComponent<BoardManager>();
-			
+
+			//Get players gameobjects
+			player = GameObject.Find("Player");
+			player1 = GameObject.Find("Player1");
+
 			//Call the InitGame function to initialize the first level 
 			InitGame();
 		}
@@ -95,10 +100,12 @@ namespace Completed
 			
 			//Clear any Enemy objects in our List to prepare for next level.
 			enemies.Clear();
-			
+
 			//Call the SetupScene function of the BoardManager script, pass it current level number.
 			boardScript.SetupScene(level);
-			
+
+			//Setup players position
+			boardScript.SetupPlayersPosition(player, player1);
 		}
 		
 		

@@ -552,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089777624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 3.5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -581,7 +581,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146652, guid: 28b53fc28d3a140c392f0e2d919f9de1, type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 446652, guid: 28b53fc28d3a140c392f0e2d919f9de1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -623,6 +623,10 @@ PrefabInstance:
       propertyPath: currentNbPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11446652, guid: 28b53fc28d3a140c392f0e2d919f9de1, type: 3}
+      propertyPath: PlayerId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b53fc28d3a140c392f0e2d919f9de1, type: 3}
 --- !u!1 &1311037452 stripped
@@ -646,7 +650,7 @@ MonoBehaviour:
   rewiredInputManager: {fileID: 1875719693}
   useAllRewiredGamePlayers: 0
   useRewiredSystemPlayer: 0
-  rewiredPlayerIds: 00000000
+  rewiredPlayerIds: 01000000
   usePlayingPlayersOnly: 0
   playerMice: []
   moveOneElementPerAxisPress: 0
@@ -867,6 +871,101 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rewired Input Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._name
+      value: Player0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._descriptiveName
+      value: Player0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._startPlaying
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._assignMouseOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._assignKeyboardOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._controllerMapLayoutManagerSettings._enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._controllerMapLayoutManagerSettings._loadFromUserDataStore
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[1]._controllerMapEnablerSettings._enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.playerIdCounter
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._name
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._descriptiveName
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._startPlaying
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._assignKeyboardOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._controllerMapLayoutManagerSettings._enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._controllerMapLayoutManagerSettings._loadFromUserDataStore
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108078727739989815, guid: d5bc940748c15a246a6788909d620ca2,
+        type: 3}
+      propertyPath: _userData.players.Array.data[2]._controllerMapEnablerSettings._enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3059873285130964368, guid: d5bc940748c15a246a6788909d620ca2,
         type: 3}

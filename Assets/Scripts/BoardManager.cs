@@ -45,6 +45,9 @@ namespace Completed
 		private int columnOffset;
 		private int rowOffset;
 
+		private bool isFirstTileSet;
+		private Vector3 firstFloorTilePos;
+
 		//Clears our list gridPositions and prepares it to generate a new board.
 		void InitialiseList ()
 		{
@@ -73,8 +76,13 @@ namespace Completed
 			currentColumns = Random.Range(columns.minimum, columns.maximum);
 			currentRows = Random.Range(rows.minimum, rows.maximum);
 
+			//Debug.Log("Colonnes : " + currentColumns + ", Lignes : " + currentRows);
+
 			columnOffset = currentColumns / 2;
 			rowOffset = currentRows / 2;
+
+			//Be sure that the first floor tile isn't set yet
+			isFirstTileSet = false; 
 
 			//Loop along x axis, starting from -1 (to fill corner) with floor or outerwall edge tiles.
 			for (int x = -1; x < currentColumns + 1; ++x)
@@ -99,8 +107,20 @@ namespace Completed
 					
 					//Set the parent of our newly instantiated object instance to boardHolder, this is just organizational to avoid cluttering hierarchy.
 					instance.transform.SetParent (boardHolder);
+
+					//Get the position of the first floor tile to set players position
+					if (!isFirstTileSet)
+					{
+						firstFloorTilePos = instance.transform.position;
+						isFirstTileSet = true;
+					}
 				}
 			}
+
+			//Instantiate the exit tile in the upper right hand corner of our game board
+			GameObject _exit = Instantiate(exit, new Vector3((currentColumns - 1)/2, (currentRows - 1)/2, 0f), Quaternion.identity);
+
+			_exit.transform.SetParent(boardHolder);
 		}
 		
 		
@@ -162,9 +182,14 @@ namespace Completed
 			
 			//Instantiate a random number of enemies based on minimum and maximum, at randomized positions.
 			LayoutObjectAtRandom (enemyTiles, enemyCount, enemyCount);
-			
-			//Instantiate the exit tile in the upper right hand corner of our game board
-			Instantiate (exit, new Vector3 (currentColumns - 1, currentRows - 1, 0f), Quaternion.identity);
+		}
+
+
+		//Setup the position of the players
+		public void SetupPlayersPosition(GameObject player, GameObject player1)
+		{
+			player.transform.position = firstFloorTilePos + new Vector3(1,1,0);
+			player1.transform.position = player.transform.position + new Vector3(0, 1, 0);
 		}
 	}
 }
