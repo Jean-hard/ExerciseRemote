@@ -160,8 +160,6 @@ namespace Completed
 		{
             if (playersTurn2 || !playersTurn || !enemiesMoving && !doingSetup)
             {
-                Debug.Log("launch themove ennemies bordel");
-
                 playersTurn2 = false;
                 //While enemiesMoving is true player is unable to move.
                 enemiesMoving = true;

@@ -188,7 +188,10 @@ namespace Completed
 		//Setup the position of the players
 		public void SetupPlayersPosition(GameObject player, GameObject player1)
 		{
-			player.transform.position = firstFloorTilePos + new Vector3(1,1,0);
+            player = GameObject.Find("Player");
+            player1 = GameObject.Find("Player1");
+
+            player.transform.position = firstFloorTilePos + new Vector3(1,1,0);
 			player1.transform.position = player.transform.position + new Vector3(0, 1, 0);
 		}
 	}
