@@ -68,6 +68,7 @@ namespace Completed
 		
 		private void Update ()
 		{
+
             //If it's not the player's turn, exit the function.
             if (currentNbPlayer == NB_PLAYER.PLAYER_1)
             {
@@ -83,18 +84,32 @@ namespace Completed
             }
 
             int horizontal = 0;  	//Used to store the horizontal move direction.
-			int vertical = 0;		//Used to store the vertical move direction.
-			
-			//Check if we are running either in the Unity editor or in a standalone build.
+			int vertical = 0;       //Used to store the vertical move direction.
+
+            //Check if we are running either in the Unity editor or in a standalone build.
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-			
-			//Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
-			horizontal = (int) inputPlayer.GetAxis(RewiredConsts.Action.HorizontalMove);
-            Debug.Log("valeur horizontal rewired : " + horizontal);
+
+            //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
+            //horizontal = (int) inputPlayer.GetAxis(RewiredConsts.Action.HorizontalMove);
+
+            if (Input.GetAxisRaw("Horizontal") < 0)
+                horizontal = -1;
+            else if (Input.GetAxisRaw("Horizontal") > 0)
+                horizontal = 1;
+            else
+                horizontal = 0;
+                //horizontal = (int) Input.GetAxis("Horizontal");
 
             //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
-            vertical = (int) inputPlayer.GetAxis(RewiredConsts.Action.VerticalMove);
-            Debug.Log("valeur vertical rewired : " + vertical);
+            //vertical = (int) inputPlayer.GetAxis(RewiredConsts.Action.VerticalMove);
+
+            if (Input.GetAxisRaw("Vertical") < 0)
+                vertical = -1;
+            else if (Input.GetAxisRaw("Vertical") > 0)
+                vertical = 1;
+            else
+                vertical = 0;
+            //vertical = (int) Input.GetAxis("Vertical");
 
             //Check if moving horizontally, if so set vertical to zero.
             if (horizontal != 0)
